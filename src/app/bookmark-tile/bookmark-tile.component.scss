@@ -14,7 +14,7 @@
 
   &:hover {
     background-color: rgba(black, .68);
-    backdrop-filter: blur;
+    backdrop-filter: blur(2px);
   }
 
   &:active {
