@@ -29,14 +29,12 @@
 }
 
 .content-section {
-  // background-color: cadetblue;
   flex-grow: 1;
   min-height: 0;
 }
 
 .bottom-section {
   display: flex;
-  // background-color: coral;
 
   app-tabs {
     margin: 0 auto;

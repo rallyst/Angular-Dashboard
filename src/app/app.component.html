@@ -4,7 +4,10 @@
     <h2>1 May 2022</h2>
   </div>
 
-  <div class="content-section" [@routeAnim]="prepareRoute(outlet)">
+  <div 
+    class="content-section" 
+    [@routeAnim]="prepareRoute(outlet)"
+  >
     <router-outlet #outlet="outlet"></router-outlet>
   </div>
 
