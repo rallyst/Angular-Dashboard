@@ -10,6 +10,8 @@ import { TodosComponent } from './todos/todos.component';
 import { NotesComponent } from './notes/notes.component';
 import { BookmarkTileComponent } from './bookmark-tile/bookmark-tile.component';
 import { AddNoteComponent } from './add-note/add-note.component';
+import { NoteCardComponent } from './note-card/note-card.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -19,12 +21,14 @@ import { AddNoteComponent } from './add-note/add-note.component';
     TodosComponent,
     NotesComponent,
     BookmarkTileComponent,
-    AddNoteComponent
+    AddNoteComponent,
+    NoteCardComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
