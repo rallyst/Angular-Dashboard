@@ -19,7 +19,7 @@ export class TodoService {
   }
 
   getTodo(id: string) {
-    this.todos.find(t => t.id === id)
+    return this.todos.find(t => t.id === id)
   }
 
   addTodo(todo: Todo) {
@@ -32,8 +32,8 @@ export class TodoService {
   }
 
   deleteTodo(id: string) {
-    const index = this.todos.findIndex(t => t.id = id);
-
+    const index = this.todos.findIndex(t => t.id === id);
+    console.log(index)
     if (index == -1) return
 
     this.todos.splice(index, 1);
