@@ -8,5 +8,14 @@
   gap: 20px;
   justify-content: center;
   flex-wrap: wrap;
+}
 
+.add-btn i {
+  margin-right: 5px;
+  margin-left: -5px;
+}
+
+.manage-btn i {
+  margin-right: 8px;
+  opacity: .9;
 }
