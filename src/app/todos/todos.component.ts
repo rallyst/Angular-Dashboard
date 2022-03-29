@@ -1,6 +1,7 @@
 import { animate, style, transition, trigger } from '@angular/animations';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { NotificationService } from '../shared/notification.service';
 import { Todo } from '../shared/todo.model';
 import { TodoService } from '../shared/todo.service';
 
@@ -26,7 +27,8 @@ export class TodosComponent implements OnInit {
 
   constructor(
     private todoService: TodoService,
-    private router: Router
+    private router: Router,
+    private notificationService: NotificationService
   ) { }
 
   ngOnInit(): void {
@@ -43,6 +45,7 @@ export class TodosComponent implements OnInit {
 
   onDeleteClick(todo: Todo) {
     this.todoService.deleteTodo(todo.id);
+    this.notificationService.show('Todo Deleted!');
   }
 
 }
