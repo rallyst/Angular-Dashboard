@@ -9,6 +9,15 @@ import {
 import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 
+const baseStyles = style({
+  display: 'block',
+  position: 'absolute',
+  top: 0,
+  left: 0,
+  width: '100%',
+  height: '100%'
+});
+
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -21,14 +30,7 @@ import { RouterOutlet } from '@angular/router';
           overflow: 'hidden'
         }),
         query(':enter, :leave', [
-          style({
-            display: 'block',
-            position: 'absolute',
-            top: 0,
-            left: 0,
-            width: '100%',
-            height: '100%'
-          })
+          baseStyles
         ], { optional: true }),
 
         group([
@@ -57,14 +59,7 @@ import { RouterOutlet } from '@angular/router';
           overflow: 'hidden'
         }),
         query(':enter, :leave', [
-          style({
-            display: 'block',
-            position: 'absolute',
-            top: 0,
-            left: 0,
-            width: '100%',
-            height: '100%'
-          })
+          baseStyles
         ], { optional: true }),
 
         group([
@@ -86,7 +81,66 @@ import { RouterOutlet } from '@angular/router';
           ], { optional: true })
         ])
         
-      ])
+      ]),
+
+      transition('* => secondary', [
+        style({
+          position: 'relative',
+          overflow: 'hidden'
+        }),
+        query(':enter, :leave', [
+          baseStyles
+        ], { optional: true }),
+
+        group([
+          query(':leave', [
+            animate('250ms ease-in', style({
+              opacity: 0,
+              transform: 'scale(.8)'
+            }))
+          ], { optional: true }),
+          query(':enter', [
+            style({
+              transform: 'scale(1.2)',
+              opacity: 0
+            }),
+            animate('250ms 120ms ease-out', style({
+              opacity: 1,
+              transform: 'scale(1)'
+            }))
+          ], { optional: true })
+        ])
+      ]),
+
+      transition('secondary => *', [
+        style({
+          position: 'relative',
+          overflow: 'hidden'
+        }),
+        query(':enter, :leave', [
+          baseStyles
+        ], { optional: true }),
+
+        group([
+          query(':leave', [
+            animate('250ms ease-in', style({
+              opacity: 0,
+              transform: 'scale(1.25)'
+            }))
+          ], { optional: true }),
+          query(':enter', [
+            style({
+              transform: 'scale(.8)',
+              opacity: 0
+            }),
+            animate('250ms 120ms ease-out', style({
+              opacity: 1,
+              transform: 'scale(1)'
+            }))
+          ], { optional: true })
+        ])
+      ]),
+
     ]),
 
     trigger('bgAnim', [
@@ -120,7 +174,11 @@ export class AppComponent {
 
   prepareRoute(outlet: RouterOutlet): any {
     if (outlet.isActivated) {
-      return outlet.activatedRouteData['tab'];
+      const tab = outlet.activatedRouteData['tab'];
+
+      if(!tab) return 'secondary';
+
+      return tab;
     } 
   } 
 
