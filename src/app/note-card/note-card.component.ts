@@ -6,6 +6,7 @@ import { Note } from '../shared/note.model';
   templateUrl: './note-card.component.html',
   styleUrls: ['./note-card.component.scss']
 })
+
 export class NoteCardComponent implements OnInit {
 
   @Input() note!: Note;
@@ -14,5 +15,4 @@ export class NoteCardComponent implements OnInit {
 
   ngOnInit(): void {
   }
-
 }

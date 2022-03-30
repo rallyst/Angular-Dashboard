@@ -21,6 +21,7 @@ import { TodoService } from '../shared/todo.service';
     ])
   ]
 })
+
 export class TodosComponent implements OnInit {
 
   todos!: Todo[];
@@ -51,5 +52,4 @@ export class TodosComponent implements OnInit {
   trackById(index: any, item: Todo) {
     return item.id;
   }
-
 }

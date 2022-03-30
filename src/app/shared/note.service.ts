@@ -5,6 +5,7 @@ import { Note } from './note.model';
 @Injectable({
   providedIn: 'root'
 })
+
 export class NoteService implements OnDestroy {
 
   notes: Note[] = [];

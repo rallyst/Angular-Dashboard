@@ -24,8 +24,6 @@
   i {
     color: #222;
   }
-  
-
 }
 
 .tab.selected .tab-tile {
@@ -33,7 +31,6 @@
   transition: .4s;
   transition-timing-function: cubic-bezier(0, 0, 0, 1.9);
 }
-
 
 // STYLES FOR THE TAB TILE BACKGROUND "SHARE"
 .tab-tile::before {
@@ -74,12 +71,9 @@
   opacity: 1;
   transition-delay: .08s;
 }
-
 // END OF TAB TILE BACKGROUND "SHARE" STYLES
 
-
 // STYLES FOR THE UNDERLINE EFFECT
-
 .tab::after {
   content: '';
   position: absolute;

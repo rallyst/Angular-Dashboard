@@ -6,8 +6,10 @@ import {
   trigger, 
   group 
 } from '@angular/animations';
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
+import { Observable, timer } from 'rxjs';
+import { map } from 'rxjs/operators';
 
 const baseStyles = style({
   display: 'block',
@@ -164,13 +166,25 @@ const baseStyles = style({
     ])
   ]
 })
-export class AppComponent {
+
+export class AppComponent implements OnInit {
 
   backgrounds: string[] = [
     'https://images.unsplash.com/photo-1646877765097-8b3389ce95f2?crop=entropy&cs=tinysrgb&fit=crop&fm=jpg&h=1080&ixid=MnwxfDB8MXxyYW5kb218MHx8fHx8fHx8MTY0ODYzOTc5Ng&ixlib=rb-1.2.1&q=80&w=1920'
   ]
 
   loadingBGImage!: boolean;
+
+  dateTime!: Observable<Date>;
+
+  ngOnInit(): void {
+  
+    this.dateTime = timer(0, 1000).pipe(
+      map(() => {
+        return new Date;
+      })
+    )
+  }
 
   prepareRoute(outlet: RouterOutlet): any {
     if (outlet.isActivated) {
@@ -203,7 +217,5 @@ export class AppComponent {
     this.backgrounds = this.backgrounds.filter(b => b === src);
       
     this.loadingBGImage = false;
-  }
-
-  
+  } 
 }

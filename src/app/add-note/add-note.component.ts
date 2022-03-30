@@ -5,12 +5,12 @@ import { Note } from '../shared/note.model';
 import { NoteService } from '../shared/note.service';
 import { NotificationService } from '../shared/notification.service';
 
-
 @Component({
   selector: 'app-add-note',
   templateUrl: './add-note.component.html',
   styleUrls: ['./add-note.component.scss']
 })
+
 export class AddNoteComponent implements OnInit {
 
   showValidationErrors!: boolean;
@@ -32,5 +32,4 @@ export class AddNoteComponent implements OnInit {
     this.router.navigateByUrl('/notes');
     this.notificationService.show('Note Added!')
   }
-
 }

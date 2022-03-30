@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Form, NgForm } from '@angular/forms';
+import { NgForm } from '@angular/forms';
 import { ActivatedRoute, ParamMap, Router } from '@angular/router';
 import { Bookmark } from '../shared/bookmark.model';
 import { BookmarkService } from '../shared/bookmark.service';

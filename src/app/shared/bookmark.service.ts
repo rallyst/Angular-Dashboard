@@ -5,6 +5,7 @@ import { Bookmark } from './bookmark.model';
 @Injectable({
   providedIn: 'root'
 })
+
 export class BookmarkService implements OnDestroy{
 
   bookmarks: Bookmark[] = [];
@@ -73,6 +74,4 @@ export class BookmarkService implements OnDestroy{
       console.log(e);
     }
   }
-
 }
-

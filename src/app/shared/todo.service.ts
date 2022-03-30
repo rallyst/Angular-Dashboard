@@ -5,6 +5,7 @@ import { Todo } from './todo.model';
 @Injectable({
   providedIn: 'root'
 })
+
 export class TodoService implements OnDestroy {
 
   todos: Todo[] = [];
@@ -70,6 +71,5 @@ export class TodoService implements OnDestroy {
       console.log('There was an error retrieving the todos from localStorage')
       console.log(e);
     }
-    
   }
 }

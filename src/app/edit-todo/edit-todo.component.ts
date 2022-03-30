@@ -36,5 +36,4 @@ export class EditTodoComponent implements OnInit {
     this.router.navigateByUrl('/todos');
     this.notificationService.show('Todo Updated!')
   }
-
 }

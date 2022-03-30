@@ -6,8 +6,7 @@
   <form 
     #form="ngForm"
     (ngSubmit)="onFormSubmit(form)"
-    *ngIf="note"
-    >
+    *ngIf="note">
     <div class="form-field">
       <input 
       [ngModel]="note.title"

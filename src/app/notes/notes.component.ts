@@ -7,6 +7,7 @@ import { NoteService } from '../shared/note.service';
   templateUrl: './notes.component.html',
   styleUrls: ['./notes.component.scss']
 })
+
 export class NotesComponent implements OnInit {
 
   notes!: Note[];
@@ -16,5 +17,4 @@ export class NotesComponent implements OnInit {
   ngOnInit(): void {
     this.notes = this.noteService.getNotes()
   }
-
 }

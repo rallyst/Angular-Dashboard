@@ -40,5 +40,4 @@ export class EditNoteComponent implements OnInit {
     this.router.navigateByUrl("/notes");
     this.notificationService.show('Note deleted!')
   }
-
 }

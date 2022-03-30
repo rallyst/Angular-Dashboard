@@ -5,6 +5,7 @@ import { NotificationData } from './notification-data.model';
 @Injectable({
   providedIn: 'root'
 })
+
 export class NotificationService {
 
   private notification$: Subject<NotificationData> = new Subject();
@@ -19,4 +20,3 @@ export class NotificationService {
     this.notification$.next({text, duration})
   }
 }
-

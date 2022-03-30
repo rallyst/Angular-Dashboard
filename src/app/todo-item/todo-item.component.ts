@@ -6,6 +6,7 @@ import { Todo } from '../shared/todo.model';
   templateUrl: './todo-item.component.html',
   styleUrls: ['./todo-item.component.scss']
 })
+
 export class TodoItemComponent implements OnInit {
 
   @Input() todo!: Todo
@@ -25,5 +26,4 @@ export class TodoItemComponent implements OnInit {
   onDeleteClick() {
     this.deleteClick.emit();
   }
-
 }

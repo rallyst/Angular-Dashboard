@@ -30,5 +30,4 @@ export class AddTodoComponent implements OnInit {
     this.router.navigateByUrl('/todos');
     this.notificationService.show('Todo Added!')
   }
-
 }

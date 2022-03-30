@@ -25,6 +25,7 @@ import { NotificationService } from '../shared/notification.service';
     ])
   ]
 })
+
 export class NotificationComponent implements OnInit {
 
   notification!: NotificationData[] | null;
@@ -45,5 +46,4 @@ export class NotificationComponent implements OnInit {
         }, notification.duration)
       })
   }
-
 }

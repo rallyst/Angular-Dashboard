@@ -7,6 +7,7 @@ import { BookmarkService } from '../shared/bookmark.service';
   templateUrl: './bookmarks.component.html',
   styleUrls: ['./bookmarks.component.scss']
 })
+
 export class BookmarksComponent implements OnInit {
 
   bookmarks!: Bookmark[];
@@ -16,5 +17,4 @@ export class BookmarksComponent implements OnInit {
   ngOnInit(): void {
     this.bookmarks = this.bookmarkService.getBookmarks();
   }
-
 }
